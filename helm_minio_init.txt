@@ -1,0 +1,11 @@
+helm install minio \
+  --namespace openebs \
+  --set accessKey=minioadmin \
+  --set secretKey=minioadmin \
+  --set mode=standalone \
+  --set persistence.storageClass=openebs-hostpath \
+  --set persistence.size=100Gi \
+  --set service.type=NodePort \
+  --set service.nodeport=32000 \
+  --set service.targetport=9000 \
+  minio/minio
