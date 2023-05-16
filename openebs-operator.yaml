@@ -984,6 +984,11 @@ metadata:
         value: "/mnt/data"
 provisioner: openebs.io/local
 volumeBindingMode: WaitForFirstConsumer
+allowedTopologies:
+- matchLabelExpressions:
+  - key: kubernetes.io/hostname
+    values:
+    - node3
 reclaimPolicy: Delete
 ---
 apiVersion: storage.k8s.io/v1
